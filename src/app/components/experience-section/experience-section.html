@@ -1,0 +1,45 @@
+<section class="experience" id="experience">
+  <div class="experience__inner">
+
+    <div class="experience__header">
+      <p class="section-eyebrow">Professional Experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+    </div>
+
+    <div class="experience__timeline">
+      @for (exp of experiences; track exp.company) {
+        <div class="exp-card" [class.exp-card--current]="exp.current">
+
+          <div class="exp-card__connector">
+            <div class="exp-card__dot"></div>
+            <div class="exp-card__line"></div>
+          </div>
+
+          <div class="exp-card__body">
+            <div class="exp-card__meta">
+              <div class="exp-card__title-row">
+                <h3 class="exp-card__role">{{ exp.role }}</h3>
+                @if (exp.current) {
+                  <span class="exp-card__badge">Current</span>
+                }
+              </div>
+              <div class="exp-card__sub">
+                <span class="exp-card__company">{{ exp.company }}</span>
+                <span class="exp-card__sep" aria-hidden="true">·</span>
+                <span class="exp-card__duration">{{ exp.duration }}</span>
+              </div>
+            </div>
+
+            <ul class="exp-card__bullets">
+              @for (bullet of exp.bullets; track bullet) {
+                <li class="exp-card__bullet">{{ bullet }}</li>
+              }
+            </ul>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
