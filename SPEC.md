@@ -96,7 +96,66 @@ I'm particularly interested in opportunities where I can work on meaningful prod
 
 ---
 
-## 4. Featured Projects
+##  4. Professional Experience
+
+---
+
+### **Consultant – Capgemini**
+
+*Mar 2023 – Present*
+
+* Designed and developed modern, user-friendly interfaces using Angular, improving overall user experience and application usability.
+* Built and integrated backend APIs using NestJS, ensuring efficient data flow and system reliability.
+* Contributed to frontend architecture decisions, focusing on scalability and maintainability.
+* Mentored junior developers, guiding them in best practices, code quality, and problem-solving approaches.
+
+---
+
+### **Angular Developer – Infospica**
+
+*Sep 2021 – Mar 2023*
+
+* Developed and maintained scalable web applications tailored to client-specific requirements.
+* Built reusable components and implemented custom validations to ensure data integrity and consistency.
+* Managed complex application state using efficient state management techniques.
+* Participated in system design and architectural discussions for improving application structure.
+* Conducted code reviews and mentored team members, improving overall development quality.
+
+---
+
+### **Software Engineer – Abeyaantrix Solutions**
+
+*Nov 2020 – Aug 2021*
+
+* Developed multiple web applications with a focus on reusable component architecture.
+* Integrated backend APIs using structured patterns (Facade pattern), improving code maintainability.
+* Enhanced user experience through optimized UI design and efficient state handling.
+* Collaborated with team members to maintain code quality and consistency across projects.
+
+---
+
+### **Angular Developer – Galtech Technologies**
+
+*Apr 2019 – Aug 2019*
+
+* Contributed to an inventory management system for a Dubai-based client.
+* Developed authentication modules and material management features.
+* Integrated Firebase for real-time database operations and improved system responsiveness.
+* Focused on delivering reliable and user-friendly interfaces aligned with client needs.
+
+---
+
+### **Web Developer – Annvision Solutions**
+
+*Oct 2017 – Mar 2019*
+
+* Developed multiple web applications including job portals and admin dashboards.
+* Implemented user authentication, payment gateway integration, and admin panel features.
+* Built scalable backend systems using CodeIgniter and core PHP.
+* Ensured secure data handling and delivered functional, user-focused solutions.
+
+
+## 5. Featured Projects
 
 **Layout:** Responsive grid of project cards. Each card links to a detailed case study page.
 
@@ -112,7 +171,7 @@ I'm particularly interested in opportunities where I can work on meaningful prod
 
 ---
 
-### 4.1 Case Study Page Layout
+### 5.1 Case Study Page Layout
 
 Each project's detail page follows this structure:
 
@@ -184,7 +243,7 @@ Modern chat applications require real-time updates, reliable message persistence
 
 ---
 
-## 5. Technical Deep Dives
+## 6. Technical Deep Dives
 
 **Layout:** List of clickable links, each opening a detailed article/section page.
 
@@ -196,7 +255,7 @@ Modern chat applications require real-time updates, reliable message persistence
 
 ---
 
-## 6. Resume & Contact
+## 7. Resume & Contact
 
 ### Resume
 - Downloadable PDF button
