@@ -1,28 +1,19 @@
 .deep-dives {
-  background-color: #0a0a0a;
+  background-color: var(--bg-base);
   padding: 6rem 2rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-.deep-dives__inner {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+.deep-dives__inner { max-width: 1000px; margin: 0 auto; }
 
-.deep-dives__header {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
-.deep-dives__header .section-title {
-  margin-bottom: 0.875rem;
-}
+.deep-dives__header { text-align: center; margin-bottom: 3.5rem; }
+.deep-dives__header .section-title { margin-bottom: 0.875rem; }
 
 .deep-dives__desc {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   line-height: 1.75;
-  color: #6b7280;
+  color: var(--text-muted);
   max-width: 560px;
   margin: 0 auto;
 }
@@ -35,13 +26,8 @@
   flex-direction: column;
 }
 
-.deep-dive-item {
-  border-bottom: 1px solid #1f2937;
-}
-
-.deep-dive-item:first-child {
-  border-top: 1px solid #1f2937;
-}
+.deep-dive-item { border-bottom: 1px solid var(--border); }
+.deep-dive-item:first-child { border-top: 1px solid var(--border); }
 
 .deep-dive-link {
   display: flex;
@@ -54,17 +40,9 @@
   transition: background-color 0.15s ease;
 }
 
-.deep-dive-link:hover {
-  background-color: #111111;
-}
-
-.deep-dive-link:hover .deep-dive-link__title {
-  color: #818cf8;
-}
-
-.deep-dive-link:hover .deep-dive-link__meta {
-  color: #6366f1;
-}
+.deep-dive-link:hover { background-color: var(--bg-card); }
+.deep-dive-link:hover .deep-dive-link__title { color: var(--accent-light); }
+.deep-dive-link:hover .deep-dive-link__meta  { color: var(--accent); }
 
 .deep-dive-link__left {
   display: flex;
@@ -90,14 +68,14 @@
 .deep-dive-link__title {
   font-size: 1rem;
   font-weight: 600;
-  color: #e5e7eb;
+  color: var(--text-primary);
   line-height: 1.3;
   transition: color 0.15s ease;
 }
 
 .deep-dive-link__subtitle {
   font-size: 0.8125rem;
-  color: #6b7280;
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
@@ -122,30 +100,20 @@
   letter-spacing: 0.06em;
   padding: 0.15rem 0.5rem;
   border-radius: 999px;
-  background-color: rgba(99, 102, 241, 0.08);
-  color: #818cf8;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background-color: var(--accent-bg);
+  color: var(--accent-light);
+  border: 1px solid var(--accent-border-sub);
 }
 
 .deep-dive-link__meta {
   font-size: 0.75rem;
   font-weight: 500;
-  color: #4b5563;
+  color: var(--text-faint);
   white-space: nowrap;
   transition: color 0.15s ease;
 }
 
 @media (max-width: 680px) {
-  .deep-dive-link {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.875rem;
-  }
-
-  .deep-dive-link__right {
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
+  .deep-dive-link { flex-direction: column; align-items: flex-start; gap: 0.875rem; }
+  .deep-dive-link__right { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
 }

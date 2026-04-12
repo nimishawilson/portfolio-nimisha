@@ -8,7 +8,91 @@ html, body {
   height: 100%;
 }
 
-/* ─── Shared design tokens — used across multiple components ─────────────────── */
+/* ─── Design tokens — dark mode (default) ───────────────────────────────────── */
+
+:root {
+  --bg-base:           #0a0a0a;
+  --bg-alt:            #0d0d0d;
+  --bg-card:           #111111;
+  --bg-card-hover:     #131313;
+
+  --text-heading:      #ffffff;
+  --text-primary:      #e5e7eb;
+  --text-secondary:    #d1d5db;
+  --text-body:         #9ca3af;
+  --text-muted:        #6b7280;
+  --text-faint:        #4b5563;
+  --text-faintest:     #374151;
+
+  --border:            #1f2937;
+  --border-faint:      #1a1a1a;
+
+  --accent:            #6366f1;
+  --accent-hover:      #4f46e5;
+  --accent-light:      #818cf8;
+  --accent-glow:       rgba(99, 102, 241, 0.08);
+  --accent-bg:         rgba(99, 102, 241, 0.10);
+  --accent-bg-strong:  rgba(99, 102, 241, 0.12);
+  --accent-border:     rgba(99, 102, 241, 0.20);
+  --accent-border-sub: rgba(99, 102, 241, 0.15);
+  --accent-border-str: rgba(99, 102, 241, 0.25);
+
+  --code-bg:           #0d0d0d;
+  --code-text:         #a5b4fc;
+
+  --toggle-bg:         #1f2937;
+  --toggle-border:     #374151;
+  --toggle-icon:       #9ca3af;
+
+  color-scheme: dark;
+}
+
+/* ─── Light mode overrides ──────────────────────────────────────────────────── */
+
+html.light {
+  --bg-base:           #ffffff;
+  --bg-alt:            #f8fafc;
+  --bg-card:           #ffffff;
+  --bg-card-hover:     #f1f5f9;
+
+  --text-heading:      #0f172a;
+  --text-primary:      #1e293b;
+  --text-secondary:    #334155;
+  --text-body:         #475569;
+  --text-muted:        #64748b;
+  --text-faint:        #94a3b8;
+  --text-faintest:     #cbd5e1;
+
+  --border:            #e2e8f0;
+  --border-faint:      #f1f5f9;
+
+  --accent:            #6366f1;
+  --accent-hover:      #4f46e5;
+  --accent-light:      #6366f1;
+  --accent-glow:       rgba(99, 102, 241, 0.04);
+  --accent-bg:         rgba(99, 102, 241, 0.06);
+  --accent-bg-strong:  rgba(99, 102, 241, 0.10);
+  --accent-border:     rgba(99, 102, 241, 0.20);
+  --accent-border-sub: rgba(99, 102, 241, 0.15);
+  --accent-border-str: rgba(99, 102, 241, 0.30);
+
+  --code-bg:           #f1f5f9;
+  --code-text:         #4338ca;
+
+  --toggle-bg:         #f1f5f9;
+  --toggle-border:     #e2e8f0;
+  --toggle-icon:       #64748b;
+
+  color-scheme: light;
+}
+
+/* ─── Smooth theme transition ───────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* ─── Shared tokens — used across components ────────────────────────────────── */
 
 .section-eyebrow {
   display: inline-block;
@@ -17,7 +101,7 @@ html, body {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #6366f1;
+  color: var(--accent);
 }
 
 .section-title {
@@ -26,7 +110,7 @@ html, body {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  color: #ffffff;
+  color: var(--text-heading);
 }
 
 .btn {
@@ -46,33 +130,33 @@ html, body {
 }
 
 .btn--primary {
-  background-color: #6366f1;
+  background-color: var(--accent);
   color: #ffffff;
   border: 1px solid transparent;
 }
 
 .btn--primary:hover {
-  background-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .btn--secondary {
   background-color: transparent;
-  color: #e5e7eb;
-  border: 1px solid #374151;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
 }
 
 .btn--secondary:hover {
-  border-color: #6366f1;
-  color: #ffffff;
+  border-color: var(--accent);
+  color: var(--text-heading);
 }
 
 .btn--ghost {
   background-color: transparent;
-  color: #6b7280;
+  color: var(--text-muted);
   border: 1px solid transparent;
 }
 
 .btn--ghost:hover {
-  color: #e5e7eb;
+  color: var(--text-primary);
 }
