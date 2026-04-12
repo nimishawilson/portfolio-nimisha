@@ -1,0 +1,38 @@
+<section class="deep-dives" id="deep-dives">
+  <div class="deep-dives__inner">
+
+    <div class="deep-dives__header">
+      <p class="section-eyebrow">Technical Deep Dives</p>
+      <h2 class="section-title">Writing & thinking out loud</h2>
+      <p class="deep-dives__desc">
+        In-depth articles on frontend engineering — architecture decisions, performance patterns,
+        and practical lessons from building production Angular applications.
+      </p>
+    </div>
+
+    <ul class="deep-dives__list">
+      @for (dive of deepDives; track dive.slug) {
+        <li class="deep-dive-item">
+          <a [routerLink]="['/deep-dives', dive.slug]" class="deep-dive-link">
+            <div class="deep-dive-link__left">
+              <span class="deep-dive-link__icon">{{ dive.icon }}</span>
+              <div class="deep-dive-link__text">
+                <span class="deep-dive-link__title">{{ dive.title }}</span>
+                <span class="deep-dive-link__subtitle">{{ dive.subtitle }}</span>
+              </div>
+            </div>
+            <div class="deep-dive-link__right">
+              <div class="deep-dive-link__tags">
+                @for (tag of dive.tags; track tag) {
+                  <span class="dive-tag">{{ tag }}</span>
+                }
+              </div>
+              <span class="deep-dive-link__meta">{{ dive.readTime }} →</span>
+            </div>
+          </a>
+        </li>
+      }
+    </ul>
+
+  </div>
+</section>

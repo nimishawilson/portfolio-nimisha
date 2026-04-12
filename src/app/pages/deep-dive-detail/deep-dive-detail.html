@@ -1,0 +1,81 @@
+@if (article(); as a) {
+  <div class="article">
+
+    <!-- Top nav -->
+    <div class="article__nav">
+      <a routerLink="/" fragment="deep-dives" class="back-link">← Back to Portfolio</a>
+      <span class="article__read-time">{{ a.readTime }}</span>
+    </div>
+
+    <!-- Hero -->
+    <header class="article__hero">
+      <span class="article__icon">{{ a.icon }}</span>
+      <p class="section-eyebrow">Technical Deep Dive</p>
+      <h1 class="article__title">{{ a.title }}</h1>
+      <p class="article__subtitle">{{ a.subtitle }}</p>
+      <div class="article__tags">
+        @for (tag of a.tags; track tag) {
+          <span class="article-tag">{{ tag }}</span>
+        }
+      </div>
+    </header>
+
+    <div class="article__body">
+
+      <!-- Intro -->
+      <p class="article__intro">{{ a.intro }}</p>
+
+      <!-- Sections -->
+      @for (section of a.sections; track section.heading; let i = $index) {
+        <section class="article-section">
+          <h2 class="article-section__heading">
+            <span class="article-section__number">{{ (i + 1).toString().padStart(2, '0') }}</span>
+            {{ section.heading }}
+          </h2>
+          <p class="article-section__body">{{ section.body }}</p>
+
+          @if (section.bullets) {
+            <ul class="article-list">
+              @for (bullet of section.bullets; track bullet) {
+                <li class="article-list__item">{{ bullet }}</li>
+              }
+            </ul>
+          }
+
+          @if (section.code) {
+            <pre class="article-code"><code>{{ section.code }}</code></pre>
+          }
+        </section>
+
+        @if (!$last) {
+          <div class="article-divider"></div>
+        }
+      }
+
+      <!-- Key Takeaways -->
+      <div class="article-takeaways">
+        <h2 class="article-takeaways__title">Key Takeaways</h2>
+        <ul class="article-takeaways__list">
+          @for (point of a.keyTakeaways; track point) {
+            <li class="article-takeaways__item">{{ point }}</li>
+          }
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Footer nav -->
+    <div class="article__footer">
+      <a routerLink="/" fragment="deep-dives" class="btn btn--secondary">← Back to Deep Dives</a>
+      <a routerLink="/" class="btn btn--ghost">View Portfolio</a>
+    </div>
+
+  </div>
+} @else {
+  <div class="not-found">
+    <p class="not-found__icon">📖</p>
+    <h1 class="not-found__title">Article not found</h1>
+    <p class="not-found__text">This deep dive doesn't exist or has been moved.</p>
+    <a routerLink="/" class="btn btn--primary">Back to Portfolio</a>
+  </div>
+}

@@ -1,0 +1,132 @@
+@if (project(); as p) {
+  <div class="case-study">
+
+    <!-- Top nav -->
+    <div class="case-study__nav">
+      <a routerLink="/" class="back-link">← Back to Portfolio</a>
+      <span class="case-study__status"
+        [class.status--in-progress]="p.status === 'in-progress'"
+        [class.status--completed]="p.status === 'completed'">
+        {{ p.statusNote }}
+      </span>
+    </div>
+
+    <!-- Hero -->
+    <header class="case-study__hero">
+      <span class="case-study__icon">{{ p.icon }}</span>
+      <p class="section-eyebrow">Case Study</p>
+      <h1 class="case-study__title">{{ p.title }}</h1>
+      <p class="case-study__summary">{{ p.shortDesc }}</p>
+      <div class="case-study__stack">
+        @for (tag of p.stack; track tag) {
+          <span class="stack-tag">{{ tag }}</span>
+        }
+      </div>
+    </header>
+
+    <div class="case-study__body">
+
+      <!-- Problem Statement -->
+      <section class="cs-section">
+        <h2 class="cs-section__title">
+          <span class="cs-section__number">01</span>
+          Problem Statement
+        </h2>
+        <p class="cs-section__text">{{ p.problemStatement }}</p>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <!-- My Role -->
+      <section class="cs-section">
+        <h2 class="cs-section__title">
+          <span class="cs-section__number">02</span>
+          My Role
+        </h2>
+        <ul class="cs-list">
+          @for (item of p.role; track item) {
+            <li class="cs-list__item">{{ item }}</li>
+          }
+        </ul>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <!-- Tech Stack -->
+      <section class="cs-section">
+        <h2 class="cs-section__title">
+          <span class="cs-section__number">03</span>
+          Tech Stack
+        </h2>
+        <div class="cs-tech-grid">
+          @for (tech of p.techStack; track tech.label) {
+            <div class="cs-tech-item">
+              <span class="cs-tech-item__label">{{ tech.label }}</span>
+              <span class="cs-tech-item__value">{{ tech.value }}</span>
+            </div>
+          }
+        </div>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <!-- Key Challenges -->
+      <section class="cs-section">
+        <h2 class="cs-section__title">
+          <span class="cs-section__number">04</span>
+          Key Challenges
+        </h2>
+        <ul class="cs-list">
+          @for (item of p.challenges; track item) {
+            <li class="cs-list__item">{{ item }}</li>
+          }
+        </ul>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <!-- Architectural Decisions -->
+      <section class="cs-section">
+        <h2 class="cs-section__title">
+          <span class="cs-section__number">05</span>
+          Architectural Decisions
+        </h2>
+        <ul class="cs-list">
+          @for (item of p.architecturalDecisions; track item) {
+            <li class="cs-list__item">{{ item }}</li>
+          }
+        </ul>
+      </section>
+
+      <div class="cs-divider"></div>
+
+      <!-- Outcome / Impact -->
+      <section class="cs-section">
+        <h2 class="cs-section__title">
+          <span class="cs-section__number">06</span>
+          Outcome / Impact
+        </h2>
+        <ul class="cs-list cs-list--highlight">
+          @for (item of p.outcomes; track item) {
+            <li class="cs-list__item">{{ item }}</li>
+          }
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- Footer nav -->
+    <div class="case-study__footer">
+      <a routerLink="/" class="btn btn--secondary">← Back to Portfolio</a>
+      <a routerLink="/" fragment="projects" class="btn btn--ghost">View All Projects</a>
+    </div>
+
+  </div>
+} @else {
+  <div class="not-found">
+    <p class="not-found__icon">🔍</p>
+    <h1 class="not-found__title">Project not found</h1>
+    <p class="not-found__text">The project you're looking for doesn't exist or has been moved.</p>
+    <a routerLink="/" class="btn btn--primary">Back to Portfolio</a>
+  </div>
+}

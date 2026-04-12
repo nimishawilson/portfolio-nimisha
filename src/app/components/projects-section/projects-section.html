@@ -1,0 +1,33 @@
+<section class="projects" id="projects">
+  <div class="projects__inner">
+
+    <div class="projects__header">
+      <p class="section-eyebrow">Featured Projects</p>
+      <h2 class="section-title">Things I've built</h2>
+    </div>
+
+    <div class="projects__grid">
+      @for (project of projects; track project.slug) {
+        <a [routerLink]="['/projects', project.slug]" class="project-card">
+          <div class="project-card__header">
+            <div class="project-card__icon">{{ project.icon }}</div>
+            <span class="project-card__status"
+              [class.project-card__status--in-progress]="project.status === 'in-progress'"
+              [class.project-card__status--completed]="project.status === 'completed'">
+              {{ project.status === 'in-progress' ? '🚧 In Progress' : '✅ Completed' }}
+            </span>
+          </div>
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <p class="project-card__desc">{{ project.shortDesc }}</p>
+          <div class="project-card__stack">
+            @for (tag of project.stack; track tag) {
+              <span class="stack-tag">{{ tag }}</span>
+            }
+          </div>
+          <span class="project-card__cta">View Case Study →</span>
+        </a>
+      }
+    </div>
+
+  </div>
+</section>
