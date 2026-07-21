@@ -75,11 +75,11 @@ export const SKILL_GROUPS: SkillGroup[] = [
         level: 'advanced',
         desc: 'Experience with collaborative workflows, code reviews, and maintaining clean version history.',
       },
-      {
-        name: 'CI/CD & Build Tools',
-        level: 'intermediate',
-        desc: 'Familiar with build pipelines, deployment workflows, and maintaining code quality.',
-      },
+      // {
+      //   name: 'CI/CD & Build Tools',
+      //   level: 'intermediate',
+      //   desc: 'Familiar with build pipelines, deployment workflows, and maintaining code quality.',
+      // },
       {
         name: 'AI Tools & Developer Productivity',
         level: 'beginner',
